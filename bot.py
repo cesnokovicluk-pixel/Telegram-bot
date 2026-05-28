@@ -10,8 +10,8 @@ dp = Dispatcher()
 # Кнопки (4 штуки)
 keyboard = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="Кнопка 1"), KeyboardButton(text="Кнопка 2")],
-        [KeyboardButton(text="Кнопка 3"), KeyboardButton(text="Кнопка 4")]
+        [KeyboardButton(text="О нас"), KeyboardButton(text="Услуги")],
+        [KeyboardButton(text="Кейсы"), KeyboardButton(text="Связаться с нами")]
     ],
     resize_keyboard=True
 )
@@ -20,11 +20,11 @@ keyboard = ReplyKeyboardMarkup(
 async def handler(message: types.Message):
     if message.text == "/start":
         await message.answer(
-            "Привет! Это тестовый бот 👋",
+            "Привет!👋 Добро пожаловать в мир Telegram-ботов. Я создаю ботов для Бизнеса, Магазина, Автосервисов, заявок и заказов, Ai и нейросетей! Хочешь собственного бота под свои задачи? Используй кнопки ниже)",
             reply_markup=keyboard
         )
     else:
-        await message.answer("Кнопка нажата (но она ничего не делает 😄)")
+        await message.answer("Кнопка не делает 😄")
 
 async def main():
     await dp.start_polling(bot)
